@@ -1,0 +1,44 @@
+# Datos grandes / regenerables
+andalucia-latest.osm.pbf
+*.pbf
+
+# Archivos temporales de trabajo
+_*.png
+_*.txt
+_*.mjs
+_*.ps1
+
+# Scripts de parche temporales (one-off)
+apply_fix.ps1
+boot.ps1
+chk.ps1
+clip.ps1
+compact.ps1
+default.ps1
+dump.ps1
+finddup.ps1
+fix.ps1
+fix2.ps1
+handlers.ps1
+panel.ps1
+probe.ps1
+probe2.ps1
+probe3.ps1
+probe4.ps1
+proto.ps1
+readbrand.ps1
+readbrand2.ps1
+readcss.ps1
+readcss2.ps1
+readcss3.ps1
+readcss4.ps1
+showbg.ps1
+showdup.ps1
+state.ps1
+verify.ps1
+z.ps1
+z2.ps1
+
+# Config local
+.agent-coder/
+.vscode/
