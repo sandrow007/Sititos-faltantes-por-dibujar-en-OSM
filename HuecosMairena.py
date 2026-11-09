@@ -1,4 +1,4 @@
-
+﻿
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Huecos OSM de Mairena del Aljarafe: descarga datos y crea un HTML Leaflet 100% autonomo (sin internet).
@@ -26,8 +26,8 @@ SECCION_POLY = "Mairena del Aljarafe"
 CELDA_M = 150          # celdas mas finas = mas huecos detectados
 MIN_URBANO = 0.10      # % de suelo residencial minimo por celda
 MIN_COBERTURA_EDIF = 0.15  # si la cobertura de edificios es menor, hay hueco
-MIN_RATIO_3D = 0.35    # si menos del 35% de edificios tienen altura, hueco de 3D
-MIN_ARBOLES_HA = 5.0
+MIN_RATIO_3D = 0.50    # si menos del 50% de edificios tienen altura, hueco de 3D (era 0.35)
+MIN_ARBOLES_HA = 8.0   # umbral de arboles por hectarea mas exigente (era 5.0)
 DATOS_JSON = os.path.join(os.path.dirname(__file__), "mairena_datos.json")
 SALIDA_HTML = os.path.join(os.path.dirname(__file__), "mairena_osm_huecos.html")
 SALIDA_CSV = os.path.join(os.path.dirname(__file__), "mairena_barrios_resumen.csv")
