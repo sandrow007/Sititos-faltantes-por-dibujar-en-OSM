@@ -6,6 +6,9 @@
   en esa celda que OSM no tiene mapeados.
 - Incrusta tambien la capa catbuildings (edificios oficiales sin mapear)
   con sus popups, dentro de mairena_osm_huecos.html.
+- Suma al recuento de arboles por celda el arbolado oficial del Ayto.
+  (arbolado_oficial) y lleva cuenta aparte de alcorques vacios
+  (alcorques_vacios), incrustando ambas capas en el HTML.
 
 Uso: python recalcular_huecos.py
 """
@@ -66,7 +69,7 @@ def popup_catastro(f):
 
 
 def stat_nueva():
-    return {"area": 0.0, "n": 0, "n3": 0, "trees": 0, "roads": 0.0, "cat": 0.0, "catn": 0}
+    return {"area": 0.0, "n": 0, "n3": 0, "trees": 0, "roads": 0.0, "cat": 0.0, "catn": 0, "ofic": 0, "alq": 0}
 
 
 def main():
@@ -144,6 +147,29 @@ def main():
         n_arb += 1
     print("Arboles: " + str(n_arb))
 
+    # ARBOLADO OFICIAL del Ayto. (solo lo no mapeado en OSM): cuenta como
+    # arbol a efectos de huecos de arbolado, con contador propio.
+    n_ofic = 0
+    for fgeo in datos.get("arbolado_oficial", []):
+        lon, lat = fgeo["geometry"]["coordinates"]
+        if not boundary.covers(Point(lon, lat)):
+            continue
+        stat = cell_stats.setdefault(cell_key(lat, lon), stat_nueva())
+        stat["trees"] += 1
+        stat["ofic"] += 1
+        n_ofic += 1
+    print("Arboles oficiales nuevos: " + str(n_ofic))
+
+    # ALCORQUES VACIOS del inventario municipal: contador propio por celda.
+    n_alq = 0
+    for fgeo in datos.get("alcorques_vacios", []):
+        lon, lat = fgeo["geometry"]["coordinates"]
+        if not boundary.covers(Point(lon, lat)):
+            continue
+        cell_stats.setdefault(cell_key(lat, lon), stat_nueva())["alq"] += 1
+        n_alq += 1
+    print("Alcorques vacios: " + str(n_alq))
+
     n_vias = 0
     for fgeo in roads.get("features", []):
         geom = shape(fgeo["geometry"])
@@ -178,7 +204,8 @@ def main():
             nombre = barrio_cercano(centro.y, centro.x)
             info = ("<b>" + html.escape(nombre) + "</b><br>Edificios OSM: " + str(stat["n"]) + " (con altura: " + str(stat["n3"]) + ")<br>"
                     + "Edificios Catastro: " + str(stat["catn"]) + " (" + format(stat["cat"], ".0f") + " m2)<br>"
-                    + "Cobertura OSM: " + format(cobertura, ".0%") + "<br>Arboles: " + str(stat["trees"]) + " (" + format(arboles_ha, ".1f") + "/ha)<br>"
+                    + "Cobertura OSM: " + format(cobertura, ".0%") + "<br>Arboles: " + str(stat["trees"]) + " (" + format(arboles_ha, ".1f") + "/ha)"
+                    + " [oficiales nuevos: " + str(stat["ofic"]) + "]<br>Alcorques vacios: " + str(stat["alq"]) + "<br>"
                     + '<a href="https://www.openstreetmap.org/edit?editor=id#map=18/' + format(centro.y, ".6f") + "/" + format(centro.x, ".6f") + '">Editar en iD</a>')
             item = feature(celda, {"i": info, "b": nombre})
             # HUECO REAL: OSM escaso Y Catastro confirma edificios
@@ -212,6 +239,9 @@ def main():
     data["gaps3d"] = gaps3d
     data["gaptrees"] = gaptrees
     data["catbuildings"] = catbuildings
+    # Capas nuevas del arbolado oficial del Ayto. y alcorques vacios
+    data["arbolado_oficial"] = datos.get("arbolado_oficial", [])
+    data["alcorques_vacios"] = datos.get("alcorques_vacios", [])
     nuevo = json.dumps(data, ensure_ascii=False)
     with open(HTML, "w", encoding="utf-8") as f:
         f.write(pagina[:ini] + nuevo + pagina[fin:])
