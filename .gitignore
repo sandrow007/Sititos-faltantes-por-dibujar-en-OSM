@@ -2,23 +2,11 @@
 andalucia-latest.osm.pbf
 *.pbf
 
-# Backups de procesos de parcheo
-*.bak_arbolado
-
-# Copias de seguridad de datos
-mairena_datos.json.bak*
-
-# Node/playwright (verificacion local)
-node_modules/
-package-lock.json
-package.json
-
-# Ficheros temporales de trabajo (_*)
+# Copias de seguridad y temporales generados por scripts
+*.bak_*
 _*.*
-
-# Carpeta temporal de despliegue con node_modules
-manolitoaire_mapa_mairena/node_modules/
 
 # Config local
 .agent-coder/
 .vscode/
+node_modules/
