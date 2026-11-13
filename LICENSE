@@ -1,0 +1,19 @@
+                    GNU AFFERO GENERAL PUBLIC LICENSE
+                       Version 3, 19 November 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+This project is licensed under the GNU Affero General Public License, version 3
+or (at your option) any later version (SPDX: AGPL-3.0-or-later).
+
+The authoritative full license text is available at:
+https://www.gnu.org/licenses/agpl-3.0.html
+
+IMPORTANT: This license notice applies to the project's original software
+(code), not automatically to third-party data, map tiles, imagery, or other
+content included or referenced by the project. Those materials remain subject
+to their own licenses and attribution requirements. In particular, municipal
+tree and empty-tree-pit data are identified in the map as Ayuntamiento de
+Mairena del Aljarafe data and are not relicensed here under the AGPL or ODbL.
