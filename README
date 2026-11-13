@@ -1,0 +1,60 @@
+# 🌳🗺️ Visor Geoespacial y Arbolado Urbano — Mairena del Aljarafe
+
+Aplicación web interactiva diseñada para la visualización, análisis y gestión del entorno urbano, edificaciones y arbolado del municipio de **Mairena del Aljarafe** (Sevilla). 
+
+El visor cruza datos abiertos de **OpenStreetMap (OSM)**, el **Catastro**, ortofotos del **PNOA** y el inventario municipal para detectar carencias cartográficas, zonas con déficit de vegetación y gestionar el arbolado urbano de forma ágil y visual.
+
+---
+
+## ✨ Características Principales
+
+* **Carga rápida y fluida:** Optimizado para consultar grandes volúmenes de datos geográficos sin pérdida de rendimiento en pantalla.
+* **Control de capas dinámico:** Permite activar, desactivar y superponer información según el nivel de zoom.
+* **Análisis urbano y ambiental:** Identificación rápida de edificios sin datos de altura, huecos cartográficos y alcorques vacíos.
+* **Exportación directa:** Herramientas integradas para **Imprimir** o **Capturar** vistas del mapa al instante.
+
+---
+
+## 🗂️ Capas Disponibles
+
+### 🏢 Edificación y Cartografía Base
+* **Ortofoto PNOA (satélite):** Vista aérea de alta resolución del término municipal.
+* **Catastro / Mapa OSM:** Comparativa y cruce entre los datos oficiales del Catastro y OpenStreetMap (identificando edificios *con altura*, *sin altura* y parcelas de *Catastro sin OSM*).
+* **Huecos de edificios y de altura:** Detección visual de zonas donde faltan datos volumétricos o edificaciones por mapear.
+* **Calles, avenidas y nombres de barrios:** Capas de referencia vial y toponimia local (Simón Verde, Ciudad Expo, Lepanto, Cavaleri, etc.).
+
+### 🌿 Medio Ambiente y Arbolado Urbano
+* **Arbolado oficial Ayto. (nuevo):** Inventario actualizado de los árboles gestionados por el Ayuntamiento.
+* **Alcorques vacíos (Ayto.):** Localización exacta de puntos disponibles para futuras plantaciones.
+* **Zonas con pocos árboles:** Mapa de calor/detección de áreas urbanas con baja densidad arbórea.
+* **Árboles (zoom cercano):** Detalle individualizado de ejemplares al acercar la vista.
+
+---
+
+## 💡 Curiosidad del Proyecto
+
+Si observas la silueta completa del término municipal de Mairena del Aljarafe en el visor (a nivel de zoom general), el contorno del mapa recuerda claramente a la figura de un **elefante** mirando hacia la derecha, con la zona de Simón Verde formando la cabeza y la trompa, y las áreas rurales del oeste dibujando el lomo y las patas. 🐘
+
+---
+
+## 🚀 Uso y Despliegue
+
+1. Clona este repositorio en tu equipo local:
+   ```bash
+   git clone https://github.com
+   ```
+2. Abre el archivo `index.html` en tu navegador o sírvelo mediante un servidor local (como *Live Server* en VS Code o `python -m http.server`).
+3. Utiliza el panel derecho (**Capas**) para combinar la información y la leyenda inferior izquierda (**Clave y datos**) para interpretar los colores.
+
+---
+
+## 🛠️ Tecnologías y Fuentes de Datos
+
+* **Cartografía base:** Plan Nacional de Ortofotografía Aérea (PNOA - IGN), Dirección General del Catastro y OpenStreetMap.
+* **Datos municipales:** Inventario de Arbolado y Alcorques del Ayuntamiento de Mairena del Aljarafe.
+
+---
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo la licencia [MIT](LICENSE) *(modifica este apartado según la licencia que elijas)*.
