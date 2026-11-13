@@ -29,6 +29,23 @@ SHP = r"C:\Users\SANDR\Downloads\Arboles_Parques_Mairena\Arbolado_Mairena.shp"
 
 # Tolerancia para considerar un árbol oficial igual a uno de OSM (metros)
 TOLERANCIA_M = 15.0
+# Correccion de mojibake del shapefile: el inventario municipal fue convertido
+# de CP850 a UTF-8 por un paso intermedio CP1252, y dejo estos caracteres mal.
+CORRECCION = {
+    "\u017e": "×",  # ž  -> × (signo de multiplicacion botanica)
+    "\u00a4": "ñ",  # ¤  -> ñ
+    "\u00a0": "á",  # NBSP -> á
+    "\u00a2": "ó",  # ¢  -> ó
+    "\u00a5": "Ñ",  # ¥  -> Ñ
+}
+
+
+def arreglar_texto(s):
+    if not s:
+        return s
+    for mal, bien in CORRECCION.items():
+        s = s.replace(mal, bien)
+    return s
 
 
 def main():
@@ -71,10 +88,10 @@ def main():
         if pt is None or pt.is_empty:
             continue
         lon, lat = pt.x, pt.y
-        especie = str(fila.get("ESPECIE_2", "") or "").strip()
-        nombre = str(fila.get("NOMBRE_COM", "") or "").strip()
-        barrio = str(fila.get("BARRIO", "") or "").strip()
-        calle = str(fila.get("CALLE", "") or "").strip()
+        especie = arreglar_texto(str(fila.get("ESPECIE_2", "") or "").strip())
+        nombre = arreglar_texto(str(fila.get("NOMBRE_COM", "") or "").strip())
+        barrio = arreglar_texto(str(fila.get("BARRIO", "") or "").strip())
+        calle = arreglar_texto(str(fila.get("CALLE", "") or "").strip())
         copa = fila.get("COPA__M_PE")
         try:
             copa = round(float(copa), 1) if copa is not None and copa == copa else None

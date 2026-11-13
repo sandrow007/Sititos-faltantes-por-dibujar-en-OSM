@@ -6,6 +6,16 @@ andalucia-latest.osm.pbf
 *.bak_*
 _*.*
 
+# Mapas HTML generados (regenerables desde los scripts, muy grandes)
+mairena_osm_huecos.html
+manolitoaire_mapa_mairena/mairena_osm_huecos.html
+
+# Datos grandes intermedios (regenerables desde OSM / catastro)
+mairena_datos.json
+mairena_catastro_todos.json
+mairena_roads.json
+mairena.poly
+
 # Config local
 .agent-coder/
 .vscode/
