@@ -1496,7 +1496,7 @@ function sync(){
   [['gaps',on('gaps')],['gaps3d',on('gaps3d')],['gaptrees',on('gaptrees')],['buildings3d',on('buildings3d')],
    ['buildings2d',on('buildings2d')],['trees',on('trees')],['oficial',shown.oficial],['alcorques',shown.alcorques],['parques',shown.parques]].forEach(function(pair){
     var key=pair[0],want=pair[1],has=map.hasLayer(layers[key]);
-    if(want&&!has){map.addLayer(layers[key]);layers[key].bringToFront();}
+    if(want&&!has){map.addLayer(layers[key]);if(layers[key].bringToFront)layers[key].bringToFront();}
     else if(!want&&has)map.removeLayer(layers[key]);
   });
   if(shown.gaps&&low){if(!map.hasLayer(gapBadges))gapBadges.addTo(map);if(!map.hasLayer(gapDots))gapDots.addTo(map);}
