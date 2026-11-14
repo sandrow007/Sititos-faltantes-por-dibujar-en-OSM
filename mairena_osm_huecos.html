@@ -1401,7 +1401,7 @@ function updateClip(){
   var clip='polygon('+shapePts.map(function(ll){var p=map.latLngToLayerPoint(L.latLng(ll[0],ll[1]));return p.x.toFixed(1)+'px '+p.y.toFixed(1)+'px';}).join(',')+')';
   var pane=map.getPane('tiles');pane.style.clipPath=clip;pane.style.webkitClipPath=clip;
   var ppane=map.getPane('parques');ppane.style.clipPath=clip;ppane.style.webkitClipPath=clip;
-  var roads=map.getPane('roads');roads.style.clipPath='';roads.style.webkitClipPath='';
+  var roads=map.getPane('roads');roads.style.clipPath=clip;roads.style.webkitClipPath=clip;
 }
 map.on('move zoom viewreset resize moveend zoomend',updateClip);map.whenReady(updateClip);setTimeout(updateClip,100);
 window.__clip=updateClip;
