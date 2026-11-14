@@ -20,3 +20,7 @@ mairena.poly
 .agent-coder/
 .vscode/
 node_modules/
+
+# Visor 3D (se versiona completo: GLB comprimidos con Draco + vendor)
+# Nada dentro de esta carpeta se ignora, incluso si coincide con patrones de arriba
+!mairena-3d/**

@@ -1,0 +1,20 @@
+{
+  "nombre": "Mairena del Aljarafe · modelo 3D",
+  "fuentes": [
+    "Catastro INSPIRE BU",
+    "OpenStreetMap",
+    "Inventario municipal de arbolado y alcorques"
+  ],
+  "huellas_catastrales": 8650,
+  "catastro_sin_osm": 4903,
+  "edificios_altura_documentada_en_osm": 171,
+  "arboles_dentro_termino": 18366,
+  "arboles_oficiales": 15786,
+  "alcorques_vacios": 635,
+  "parques_y_jardines": 101,
+  "viales_osm": 1473,
+  "formato": "glTF 2.0 Binary (.glb)",
+  "visor": "index.html",
+  "etiquetas_opcionales": "Mairena_Etiquetas.glb",
+  "nota": "El valor numérico de altura no está disponible en mairena_datos.json; solo está disponible la categoría edificio con altura."
+}

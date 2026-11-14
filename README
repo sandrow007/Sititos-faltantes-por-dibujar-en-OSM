@@ -21,6 +21,7 @@ Está diseñado tanto para la **gestión técnica municipal** (detección de alc
 - 🌱 **Gestión ambiental** — Visualización del inventario oficial de arbolado, alcorques disponibles para replantación y zonas con baja densidad verde.
 - 📸 **Exportación** — Botones integrados de **Imprimir** y **Capturar** para generar informes visuales o láminas de forma inmediata.
 - 🌓 **Modo claro y oscuro** — Tema adaptado al entorno y a la preferencia del usuario.
+- 🏙️ **Visor 3D de la ciudad** — Modelo Three.js autocontenido en `mairena-3d/` (Catastro + OSM + inventario municipal, geometría comprimida con Draco) con vuelo de cámara, tooltip por categoría y resolución adaptativa. Se abre desde el botón **Visor 3D completo** del panel o directamente en `mairena-3d/index.html`.
 
 ## 🗂️ Catálogo de Capas
 
