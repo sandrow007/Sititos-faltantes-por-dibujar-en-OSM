@@ -1,16 +1,16 @@
 <div align="center">
 
-# 🌳 Visor Geoespacial y Arbolado Urbano
-### **Mairena del Aljarafe · Análisis Territorial e Inventario Verde**
+<img src="https://img.shields.io/badge/Mairena_del_Aljarafe-Sevilla-1a7f5f?style=for-the-badge&labelColor=0d2b26" alt="Mairena del Aljarafe">
+<img src="https://img.shields.io/badge/Leaflet-1.9.4-199900?style=for-the-badge&logo=leaflet&logoColor=white&labelColor=0d2b26" alt="Leaflet">
+<img src="https://img.shields.io/badge/AGPL--3.0-Licencia_libre-blue?style=for-the-badge&labelColor=0d2b26" alt="AGPL v3">
 
-[![Estado](https://shields.io)]()
-[![Municipio](https://shields.io)]()
-[![Datos](https://shields.io)]()
-[![Licencia: AGPL v3](https://shields.io)](https://gnu.org)
+# 🌳 Visor Geoespacial y Arbolado Urbano
+
+### **Mairena del Aljarafe · Análisis Territorial e Inventario Verde**
 
 *Plataforma web interactiva de alto rendimiento para la auditoría cartográfica, el análisis de edificación y la gestión inteligente del patrimonio arbóreo municipal.*
 
-[Ver Demo en Vivo](#) · [Reportar un Error](#) · [Sugerir Mejora](#)
+[🚀 Ver Demo en Vivo](#) · [🐛 Reportar un Error](#) · [💡 Sugerir Mejora](#)
 
 </div>
 
@@ -18,48 +18,50 @@
 
 ## 📋 Descripción del Proyecto
 
-Este visor geoespacial permite cruzar y auditar en tiempo real distintas fuentes cartográficas oficiales y colaborativas sobre el término municipal de **Mairena del Aljarafe (Sevilla)**. 
+Este visor geoespacial permite cruzar y auditar en tiempo real distintas fuentes cartográficas oficiales y colaborativas sobre el término municipal de **Mairena del Aljarafe (Sevilla)**.
 
 Está diseñado tanto para la **gestión técnica municipal** (detección de alcorques vacíos, déficit de arbolado y auditoría de alturas en edificación) como para la **divulgación ciudadana** en eventos y exposiciones públicas gracias a su interfaz ágil, intuitiva y de carga ultrarrápida.
 
 > [!TIP]
-> **¿Sabías qué? 🐘**  
+> **¿Sabías qué? 🐘**
 > Si observas la silueta completa del término municipal recortada en el visor a zoom general, su contorno dibuja claramente la figura de un **elefante** mirando hacia el este: el sector de Simón Verde forma la cabeza y la trompa, mientras que los terrenos agrícolas del oeste trazan el lomo y las patas.
 
 ---
 
 ## ⚡ Características Destacadas
 
-* 🚀 **Renderizado Ágil:** Optimización de capas vectoriales y teselas para una navegación fluida incluso con múltiples filtros activos.
-* 🔍 **Auditoría Catastro vs. OSM:** Detección automatizada de discrepancias entre el Catastro oficial y OpenStreetMap (parcelas sin mapear o edificios sin cota de altura).
-* 🌱 **Gestión Ambiental:** Visualización precisa del inventario oficial de arbolado, alcorques disponibles para replantación y zonas urbanas con baja densidad verde.
-* 📸 **Herramientas de Exportación:** Botones integrados de **Imprimir** y **Capturar** para generar informes visuales o láminas de forma inmediata.
+| | 
+| :---: | :--- |
+| 🚀 | **Renderizado Ágil** — Optimización de capas vectoriales y teselas para una navegación fluida incluso con múltiples filtros activos. |
+| 🔍 | **Auditoría Catastro vs. OSM** — Detección automatizada de discrepancias entre el Catastro oficial y OpenStreetMap (parcelas sin mapear o edificios sin cota de altura). |
+| 🌱 | **Gestión Ambiental** — Visualización precisa del inventario oficial de arbolado, alcorques disponibles para replantación y zonas urbanas con baja densidad verde. |
+| 📸 | **Herramientas de Exportación** — Botones integrados de **Imprimir** y **Capturar** para generar informes visuales o láminas de forma inmediata. |
 
 ---
 
 ## 🗂️ Catálogo de Capas e Información
 
-El panel lateral derecho organiza la información por niveles de zoom y temáticas:
+El panel lateral organiza la información por niveles de zoom y temáticas:
 
 ### 🌿 Medio Ambiente y Patrimonio Verde
 
 | Capa | Descripción | Uso Principal |
 | :--- | :--- | :--- |
-| **Arbolado oficial Ayto. (nuevo)** | Inventario georreferenciado del arbolado público municipal. | Control y seguimiento de especies. |
-| **Alcorques vacíos (Ayto.)** | Puntos exactos con alcorque disponible sin ejemplar. | Planificación de campañas de plantación. |
-| **Zonas con pocos árboles** | Análisis espacial de áreas con déficit de cobertura arbórea. | Priorización de refugios climáticos. |
-| **Árboles (zoom cercano)** | Detalle individualizado a escala de calle. | Inspección técnica a pie de parcela. |
-| **Parques y jardines** *(Próximamente)* | Delimitación de zonas verdes y áreas recreativas. | Divulgación y mantenimiento urbano. |
+| 🌳 **Arbolado oficial Ayto.** | Inventario georreferenciado del arbolado público municipal. | Control y seguimiento de especies. |
+| ⭕ **Alcorques vacíos** | Puntos exactos con alcorque disponible sin ejemplar. | Planificación de campañas de plantación. |
+| 🍂 **Zonas con pocos árboles** | Análisis espacial de áreas con déficit de cobertura arbórea. | Priorización de refugios climáticos. |
+| 🔎 **Árboles (zoom cercano)** | Detalle individualizado a escala de calle. | Inspección técnica a pie de parcela. |
+| 🏞️ **Parques y jardines** *(Próximamente)* | Delimitación de zonas verdes y áreas recreativas. | Divulgación y mantenimiento urbano. |
 
 ### 🏢 Edificación y Cartografía Base
 
 | Capa | Descripción | Indicador Visual |
 | :--- | :--- | :--- |
-| **Ortofoto PNOA (satélite)** | Fotografía aérea de máxima actualidad y resolución (IGN). | Imagen real del terreno. |
-| **Huecos de edificios / altura** | Zonas donde faltan datos volumétricos o construcciones. | Polígonos resaltados en magenta. |
-| **Edificios con / sin altura** | Clasificación de inmuebles según disponibilidad de datos 3D. | Código de color en leyenda inferior. |
-| **Catastro sin OSM** | Parcelas registradas en Catastro aún no volcadas en OSM. | Soporte para edición cartográfica. |
-| **Calles y nombres de barrios** | Red viaria y toponimia (Ciudad Expo, Simón Verde, Cavaleri...). | Orientación y referencia rápida. |
+| 🛰️ **Ortofoto PNOA** | Fotografía aérea de máxima actualidad y resolución (IGN). | Imagen real del terreno. |
+| 🔴 **Huecos de edificios / altura** | Zonas donde faltan datos volumétricos o construcciones. | Polígonos resaltados en magenta. |
+| 🏬 **Edificios con / sin altura** | Clasificación de inmuebles según disponibilidad de datos 3D. | Código de color en leyenda. |
+| 🟣 **Catastro sin OSM** | Parcelas registradas en Catastro aún no volcadas en OSM. | Soporte para edición cartográfica. |
+| 🛣️ **Calles y barrios** | Red viaria y toponimia (Ciudad Expo, Simón Verde, Cavaleri...). | Orientación y referencia rápida. |
 
 ---
 
@@ -86,14 +88,32 @@ Sigue estos pasos para ejecutar el visor en tu entorno local:
 
 ---
 
+## 🧰 Mantenimiento de Datos: Filtro de Catastro
+
+Las parcelas del Catastro incluidas en el visor se depuran con `filter_catastro.ps1`, que elimina los edificios de municipios vecinos que se solapan con la zona administrativa externa del término:
+
+```powershell
+# Ejecutar tras regenerar el bloque catastro-data del HTML
+powershell -NoProfile -ExecutionPolicy Bypass -File filter_catastro.ps1
+```
+
+El script:
+- 📥 Lee el bloque `<script id="catastro-data">` dentro de `mairena_osm_huecos.html`.
+- 🧹 Descarta las geometrías fuera del recorte municipal (contiene una lista negra por coordenadas + caja de límites).
+- ✍️ Reescribe el HTML con el GeoJSON ya filtrado, sin tocar el resto del documento.
+
+---
+
 <details>
 <summary><b>🛠️ Fuentes de Datos y Créditos Cartográficos (Haz clic para desplegar)</b></summary>
 <br>
 
-* **Ortofotografía:** Plan Nacional de Ortofotografía Aérea (PNOA) — Instituto Geográfico Nacional (IGN).
-* **Cartografía Catastral:** Dirección General del Catastro (Sede Electrónica del Catastro).
-* **Cartografía Colaborativa:** Colaboradores de OpenStreetMap (OSM).
-* **Inventario Municipal:** Datos abiertos y registros técnicos del Ayuntamiento de Mairena del Aljarafe.
+| Fuente | Proveedor |
+| :--- | :--- |
+| 🛰️ Ortofotografía | Plan Nacional de Ortofotografía Aérea (PNOA) — IGN |
+| 🗺️ Cartografía Catastral | Dirección General del Catastro (Sede Electrónica) |
+| 🌐 Cartografía Colaborativa | Colaboradores de OpenStreetMap |
+| 🌳 Inventario Municipal | Datos abiertos del Ayuntamiento de Mairena del Aljarafe |
 
 </details>
 
@@ -103,10 +123,12 @@ Sigue estos pasos para ejecutar el visor en tu entorno local:
 
 Este proyecto es software libre y se distribuye bajo los términos de la **GNU Affero General Public License v3.0 (AGPL-3.0)**, publicada el 19 de noviembre de 2007.
 
-Cualquier usuario que interactúe con una versión modificada de esta aplicación a través de una red tiene derecho a recibir el código fuente completo correspondiente. Consulta el archivo [LICENSE](LICENSE) o visita [gnu.org/licenses/agpl-3.0](https://gnu.org.html) para más detalles.
+Cualquier usuario que interactúe con una versión modificada de esta aplicación a través de una red tiene derecho a recibir el código fuente completo correspondiente. Consulta el archivo [LICENSE](LICENSE) o visita [gnu.org/licenses/agpl-3.0](https://gnu.org/licenses/agpl-3.0) para más detalles.
 
 ---
 
 <div align="center">
-  <sub>Desarrollado bajo licencia libre para la gestión urbana y divulgación ambiental de <b>Mairena del Aljarafe</b>.</sub>
+
+<sub>Desarrollado bajo licencia libre para la gestión urbana y divulgación ambiental de <b>Mairena del Aljarafe</b> 🐘🌿</sub>
+
 </div>
