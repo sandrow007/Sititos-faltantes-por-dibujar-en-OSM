@@ -122,6 +122,9 @@ const ORTO={
  url:'https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&CRS=EPSG:25830&BBOX=222298.72,4134340.11,231512.15,4139254.61&WIDTH=2048&HEIGHT=2048&FORMAT=image/jpeg',
  xmin:-9.381,xmax:9.324,zmin:-5.276,zmax:5.102};
 
+// Perímetro administrativo oficial (coords del modelo) para recortar la ortofoto
+const FRONTERA=[[-8.7971,4.0366],[-8.2621,3.726],[-8.0078,3.5681],[-7.8171,3.4742],[-7.5801,3.3349],[-7.4619,3.2871],[-6.9324,3.1125],[-6.8736,3.1403],[-6.8241,3.1885],[-6.7483,3.2418],[-6.6005,3.3066],[-6.4878,3.3307],[-6.4178,3.3305],[-5.8841,3.1078],[-5.8755,2.944],[-5.7955,3.0092],[-5.5352,3.1501],[-5.1874,3.4014],[-5.0396,3.4624],[-4.0752,3.7554],[-3.9579,3.8033],[-3.5612,3.7823],[-3.3473,3.7835],[-3.0487,3.7536],[-2.8591,3.7534],[-2.4586,3.7861],[-2.335,3.7781],[-2.2746,3.7344],[-2.0932,3.6608],[-1.928,3.6433],[-1.7717,3.6581],[-1.62,3.6572],[-1.477,3.6325],[-1.3428,3.6482],[-1.2949,4.3158],[-1.2872,4.5486],[-1.3046,4.6905],[-0.7728,4.7051],[-0.5335,4.3925],[-0.3661,4.142],[-0.5238,3.9581],[-0.6031,3.9765],[-0.6397,3.8323],[-0.0673,3.5069],[0.1535,3.7229],[0.2515,3.8531],[0.3646,3.4609],[0.4686,3.4019],[0.9412,3.3207],[1.2039,3.2285],[1.7992,2.992],[1.9466,2.9814],[2.215,2.7534],[2.6451,2.5054],[2.6883,2.3876],[2.9744,2.3405],[3.2487,2.2379],[3.507,2.2573],[3.6777,2.224],[3.8051,2.1541],[3.9986,2.0183],[4.0696,1.9923],[4.243,2.2297],[4.5831,2.1229],[4.6049,2.3635],[4.6514,2.5054],[4.7142,2.5949],[4.8001,2.654],[4.8585,2.6719],[4.9799,2.5943],[5.0932,2.4532],[5.2573,2.2169],[5.4671,1.8514],[5.711,1.3635],[5.7735,1.3197],[6.0725,1.304],[6.1668,1.3151],[6.2458,1.3502],[6.2918,1.4126],[6.3153,1.6489],[6.3336,1.7179],[6.39,1.794],[6.4655,1.8413],[6.5391,1.8309],[6.6651,1.7772],[6.8428,1.6518],[6.957,1.5366],[7.0464,1.4639],[7.2117,1.3259],[7.4261,1.5574],[7.5017,1.4937],[7.6369,1.7015],[7.8463,2.0062],[7.8933,2.0254],[7.937,2.0102],[8.168,2.4035],[8.3317,2.361],[8.4027,2.1439],[8.4202,2.0226],[8.4852,1.6668],[8.5703,1.0617],[8.5949,0.6718],[8.5905,0.4754],[8.6027,0.4761],[8.6693,0.4688],[8.6859,0.4633],[8.6976,0.452],[8.7063,0.4378],[8.7112,0.4202],[8.7126,0.4049],[8.6965,0.215],[8.5149,0.0567],[8.6691,-0.1354],[8.4801,-0.5944],[8.4719,-0.6249],[8.4671,-0.6598],[8.4616,-0.7796],[8.4638,-0.8685],[8.4786,-0.932],[8.5202,-0.9917],[8.5937,-1.0728],[8.6431,-1.1654],[8.6877,-1.3354],[8.6951,-1.373],[8.6981,-1.5581],[8.6889,-1.6412],[8.6803,-1.6593],[8.6661,-1.6956],[8.6183,-1.7935],[8.6011,-1.8229],[8.6606,-1.9436],[8.7654,-2.2226],[8.7656,-2.3672],[8.7971,-2.3816],[8.7858,-2.4419],[8.7679,-2.5195],[8.7369,-2.6102],[8.6976,-2.9376],[8.6992,-3.0278],[8.6603,-3.1571],[8.6714,-3.2652],[8.7091,-3.5336],[8.7116,-3.6453],[8.7084,-3.6933],[8.6698,-3.7596],[8.6438,-3.8263],[8.5192,-3.8701],[8.41,-3.949],[8.3751,-4.0025],[8.1984,-3.8639],[8.0214,-4.1308],[7.9168,-4.278],[7.8886,-4.2619],[7.8832,-4.2647],[7.7267,-4.5004],[7.348,-4.3041],[7.3054,-4.3866],[7.1831,-4.3238],[7.0939,-4.4909],[6.8014,-4.5771],[6.7722,-4.6231],[6.7635,-4.6306],[6.7474,-4.6359],[6.6575,-4.6441],[6.5991,-4.6448],[6.5292,-4.6342],[6.4424,-4.6171],[6.2642,-4.5665],[6.1004,-4.5798],[6.05,-4.6384],[5.9532,-4.7051],[5.9027,-4.6989],[5.7404,-4.6598],[5.6761,-4.6883],[4.8716,-4.5526],[4.699,-4.3965],[4.5634,-4.3324],[4.4909,-4.2862],[3.8341,-3.9623],[3.7134,-3.8668],[3.3406,-3.4702],[3.2544,-3.4196],[3.1305,-3.4215],[2.8246,-3.4874],[2.7526,-3.489],[2.6354,-3.4673],[2.5764,-3.4395],[2.4789,-3.3645],[2.2185,-3.0154],[2.1681,-2.9721],[2.0263,-2.9117],[1.9047,-2.8399],[1.7539,-2.6856],[1.5866,-2.5487],[1.5002,-2.4981],[1.4193,-2.4676],[1.0824,-2.3849],[0.59,-2.2335],[0.482,-2.2439],[0.4326,-2.2184],[0.2926,-2.2856],[-0.1106,-2.396],[-0.2009,-2.405],[-0.2722,-2.3906],[-0.3565,-2.3383],[-0.5652,-2.1203],[-0.7183,-1.9817],[-0.9019,-1.8523],[-1.137,-1.7071],[-1.588,-1.5132],[-1.7581,-1.3847],[-1.6891,-1.1254],[-1.7188,-0.8714],[-1.7172,-0.7639],[-1.7501,-0.6114],[-1.7287,-0.4447],[-1.7418,-0.297],[-1.6963,-0.0056],[-1.7204,0.051],[-1.8762,0.295],[-1.8974,0.3795],[-1.9047,0.4633],[-1.8965,0.5307],[-1.7932,0.8163],[-1.8073,0.8705],[-1.8356,0.9251],[-1.8142,1.0281],[-1.7595,1.1119],[-1.7468,1.1953],[-1.7795,1.2959],[-1.8326,1.3772],[-1.8549,1.4915],[-1.8841,1.5145],[-1.9164,1.5654],[-1.9429,1.6737],[-1.9284,1.7449],[-1.8933,1.8435],[-1.887,1.9726],[-1.9004,2.1125],[-1.9601,2.3038],[-2.0937,2.3699],[-2.2189,2.4517],[-2.3582,2.524],[-2.5456,2.5958],[-2.7198,2.6453],[-2.8253,2.6568],[-3.0177,2.6332],[-3.1748,2.5945],[-3.8063,2.5215],[-3.9819,2.4676],[-4.0853,2.5408],[-4.1211,2.5458],[-4.1717,2.5235],[-4.3521,2.386],[-4.4303,2.3747],[-4.5981,2.436],[-4.7982,2.4864],[-4.9653,2.5038],[-5.1173,2.4968],[-5.2387,2.3276],[-5.3039,2.3495],[-5.385,2.6212],[-5.4211,2.6761],[-5.4899,2.7064],[-5.7055,2.7691],[-5.7776,2.642],[-5.8509,2.4214],[-5.9004,2.3095],[-6.0151,2.4048],[-6.0943,2.4873],[-6.1298,2.5023],[-6.346,2.3062],[-7.3838,2.5695],[-7.5208,2.594],[-7.6228,2.5894],[-7.7079,2.5503],[-7.7624,2.5361],[-8.0673,2.6179],[-8.3905,2.6865],[-8.6194,2.7139],[-8.5999,2.8786],[-8.5509,3.1478],[-8.5478,3.3013],[-8.7213,3.309],[-8.7509,3.5608],[-8.7573,3.7304],[-8.7971,4.0366]];
+
 try{
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
  const DPR_MAX=Math.min(devicePixelRatio,2);
@@ -158,6 +161,7 @@ try{
  window.__volar=volar;
  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 
+ let grupoBarrios=null;
  // ---- render sólo cuando hace falta, con adaptación de resolución ----
  let necesitaRender=true,ultT=performance.now(),acumFps=0,nFps=0;
  controles.addEventListener('change',()=>necesitaRender=true);
@@ -171,6 +175,7 @@ try{
   if(vuelo.activo){vuelo.t+=dt/(vuelo.dur*1000);const k=ease(Math.min(1,vuelo.t));camara.position.lerpVectors(vuelo.deP,vuelo.aP,k);controles.target.lerpVectors(vuelo.deT,vuelo.aT,k);if(vuelo.t>=1)vuelo.activo=false;necesitaRender=true}
   const moviendo=controles.update();
   if(moviendo)necesitaRender=true;
+  if(grupoBarrios&&grupoBarrios.visible){for(const sp of grupoBarrios.children){const d=camara.position.distanceTo(sp.position),k=Math.max(.004,d*.0125);sp.scale.set(k*sp.userData.w/128,k,1)}}
   if(necesitaRender){renderer.render(escena,camara);necesitaRender=vuelo.activo||controles.autoRotate}
  })(performance.now());
 
@@ -196,6 +201,7 @@ try{
 
  // ---- capas ----
  const capas={edificios:[],calles:[],parques:[],arboles:[],alcorques:[]};
+ const matsVistas=new Set(); // materiales reales del modelo → nº de capas verdadero
  function capaDe(n){
   n=norm(n);
   if(n.includes('street'))return'calles';
@@ -225,12 +231,13 @@ try{
  }
 
  // ---- etiquetas de barrios (sprites) ----
- let grupoBarrios=null;
  function hacerSprite(txt){
   const c=document.createElement('canvas');c.width=512;c.height=128;
   const g=c.getContext('2d');
-  g.font='600 52px system-ui,sans-serif';
-  const w=Math.min(g.measureText(txt).width+56,500);
+  let fs=52;g.font='600 '+fs+'px system-ui,sans-serif';
+  let tw=g.measureText(txt).width;
+  if(tw>430){fs=Math.max(22,Math.floor(fs*430/tw));g.font='600 '+fs+'px system-ui,sans-serif';tw=g.measureText(txt).width;}
+  const w=tw+56;
   g.fillStyle='rgba(255,255,255,.88)';
   g.strokeStyle='rgba(36,37,34,.35)';g.lineWidth=3;
   const x=(512-w)/2,y=18,h=92,r=26;
@@ -241,7 +248,8 @@ try{
   g.fillText(txt,256,y+h/2+2);
   const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=4;
   const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false,depthWrite:false}));
-  sp.scale.set(.0009*w,.0009*128,1);
+  sp.scale.set(.00028*w,.00028*128,1);
+  sp.userData.w=w;
   sp.renderOrder=999;
   return sp;
  }
@@ -250,7 +258,7 @@ try{
   grupoBarrios=new THREE.Group();
   for(const b of BARRIOS){
    const sp=hacerSprite(b[0]);
-   sp.position.set(b[1],.34,b[2]);
+   sp.position.set(b[1],.55,b[2]);
    grupoBarrios.add(sp);
   }
   escena.add(grupoBarrios);
@@ -263,14 +271,20 @@ try{
   ortoCargando=true;
   return new Promise(res=>{
    new THREE.TextureLoader().setCrossOrigin('anonymous').load(ORTO.url,t=>{
-    const w=ORTO.xmax-ORTO.xmin,h=ORTO.zmax-ORTO.zmin;
-    const geo=new THREE.PlaneGeometry(w,h);
+    // ortofoto recortada EXACTAMENTE al perímetro municipal: nada de entorno
+    const shape=new THREE.Shape(FRONTERA.map(p=>new THREE.Vector2(p[0],p[1])));
+    const geo=new THREE.ShapeGeometry(shape);
+    const pos=geo.attributes.position,uv=geo.attributes.uv;
+    for(let i=0;i<pos.count;i++){
+     uv.setXY(i,(pos.getX(i)-ORTO.xmin)/(ORTO.xmax-ORTO.xmin),(pos.getY(i)+5.102)/(5.276+5.102));
+    }
     geo.rotateX(-Math.PI/2);
-    ortoMesh=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({map:t}));
-    ortoMesh.position.set((ORTO.xmin+ORTO.xmax)/2,-.004,(ORTO.zmin+ORTO.zmax)/2);
+    ortoMesh=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({map:t,side:THREE.DoubleSide}));
+    ortoMesh.position.y=-.004;
     escena.add(ortoMesh);
     ortoCargando=false;
-    if(window.__SCENE_READY__)estado.textContent='Modelo cargado · ortofoto PNOA lista';
+    window.__ortoLista=true;
+    if(window.__SCENE_READY__)estado.textContent='Modelo cargado · '+matsVistas.size+' capas · ortofoto PNOA lista';
     res(true);
    },undefined,()=>{ortoCargando=false;estado.textContent='No se pudo cargar la ortofoto (sin conexión o bloqueo)';res(false)});
   });
@@ -284,12 +298,13 @@ try{
    estado.textContent='Cargando ortofoto PNOA…';
    const ok=await cargarOrtofoto();
    if(!ok){selFondo.value='marfil';escena.background.setHex(FONDOS.marfil);renderer.setClearColor(FONDOS.marfil,1);return}
-   escena.background.setHex(0x2b3238);renderer.setClearColor(0x2b3238,1);
+   escena.background.setHex(0x2b6777);renderer.setClearColor(0x2b6777,1);
    atrib.style.display='block';
-   // el terreno base taparía la foto: lo ocultamos y desmarcamos
-   const chkT=document.getElementById('terreno');chkT.checked=false;
-   raiz.traverse(o=>{if(o.userData.base)o.visible=false});
+   // el terreno base taparía la foto: lo ocultamos y desmarcamos (solo si estaba activo)
+   const chkT=document.getElementById('terreno');
+   if(chkT.checked){window.__terrenoAuto=true;chkT.checked=false;raiz.traverse(o=>{if(o.userData.base)o.visible=false});}
   }else{
+   if(window.__terrenoAuto){window.__terrenoAuto=false;const t2=document.getElementById('terreno');t2.checked=true;raiz.traverse(o=>{if(o.userData.base)o.visible=true});}
    if(ortoMesh)ortoMesh.visible=false;
    atrib.style.display='none';
    escena.background.setHex(FONDOS[v]);renderer.setClearColor(FONDOS[v],1);
@@ -304,6 +319,7 @@ try{
   g.scene.traverse(o=>{
    if(!o.isMesh)return;
    o.userData.cat=catDe(o.material?.name);
+   if(o.material&&o.material.name)matsVistas.add(norm(o.material.name));
    if(!o.geometry.boundsTree)o.geometry.computeBoundsTree();
    mejorarMateriales(o);
    const nn=norm(o.name+' '+norm(o.parent?.name));
@@ -320,7 +336,7 @@ try{
   camara.position.copy(generalPos);controles.target.copy(c);controles.maxDistance=r*2.2;controles.update();
   construirBarrios();
   barra.parentElement.hidden=true;
-  estado.textContent='Modelo cargado · '+Object.keys(CAT).length+' capas';
+  estado.textContent='Modelo cargado · '+matsVistas.size+' capas'+(window.__ortoLista?' · ortofoto PNOA lista':'');
   window.__SCENE_READY__=true;necesitaRender=true;
  },x=>{if(x.total)barra.style.width=Math.round(x.loaded/x.total*100)+'%'},e=>{estado.textContent='Error al cargar Mairena_Elefante_Real.glb';console.error(e)});
 
