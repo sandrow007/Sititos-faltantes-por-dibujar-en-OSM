@@ -80,9 +80,9 @@ try{
 
  const escena=new THREE.Scene();escena.background=new THREE.Color(0xf4f4f0);
  escena.add(new THREE.HemisphereLight(0xffffff,0x88908a,2.4));
- const sol=new THREE.DirectionalLight(0xffffff,2.3);sol.position.set(8,-12,20);escena.add(sol);
+ const sol=new THREE.DirectionalLight(0xffffff,2.3);sol.position.set(8,20,12);escena.add(sol);
 
- const camara=new THREE.PerspectiveCamera(38,1,.01,400);camara.up.set(0,0,1); // el modelo tiene Z arriba
+ const camara=new THREE.PerspectiveCamera(38,1,.01,400); // el GLB exportado desde Blender es Y-up
  const controles=new OrbitControls(camara,canvas);
  controles.enableDamping=true;controles.dampingFactor=.08;controles.rotateSpeed=.55;
  controles.zoomSpeed=.9;controles.panSpeed=.8;controles.screenSpacePanning=false;
@@ -135,8 +135,9 @@ try{
   caja=new THREE.Box3().setFromObject(g.scene);
   const c=caja.getCenter(new THREE.Vector3()),s=caja.getSize(new THREE.Vector3()),r=Math.max(s.x,s.y,s.z);
   generalTarget=c.clone();
-  generalPos=new THREE.Vector3(c.x+r*.12,c.y-r*.9,c.z+r*.55);
-  cenitalPos=new THREE.Vector3(c.x,c.y,c.z+r*1.05);
+  generalPos=new THREE.Vector3(c.x+r*.22,c.y+r*.8,c.z+r*.75);
+  if(camara.aspect<1){const k=1.75;generalPos.set(c.x+(generalPos.x-c.x)*k,c.y+(generalPos.y-c.y)*k,c.z+(generalPos.z-c.z)*k)}
+  cenitalPos=new THREE.Vector3(c.x,c.y+r*1.05,c.z);
   camara.position.copy(generalPos);controles.target.copy(c);controles.maxDistance=r*2.2;controles.update();
   barra.parentElement.hidden=true;
   estado.textContent='Modelo cargado · '+Object.keys(CAT).length+' capas';
